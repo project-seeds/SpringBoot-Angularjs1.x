@@ -23,6 +23,9 @@ angular.module('myApp')
                 id: new Date().getTime()
             }
             doAlert($rootScope, $location, $anchorScroll, alert, timeMillis, 5000)
+        },
+        reset: function() {
+            $rootScope.alerts = [];
         }
     }
 }]);
