@@ -1,0 +1,4 @@
+<ul class="menu" ng-if="user" ng-controller="MenuCtrl">
+  <li ng-repeat="item in userMenu"><a href="#{{item.link}}" translate>{{item.title}}</a></li>
+  <li><a ng-click="logout()" href="" translate>logout</a></li>
+</ul>
