@@ -16,7 +16,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'com.moowork.node'
 
 jar {
-	baseName = 'weekly-grocery-api'
+	baseName = 'weekly-grocery'
 	version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
