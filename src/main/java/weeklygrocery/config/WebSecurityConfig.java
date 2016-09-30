@@ -40,6 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.httpBasic()
 			.authenticationEntryPoint(authenticationEntryPoint())
 			.and().authorizeRequests()
+				.antMatchers("/api/users/register").anonymous()
 				.antMatchers("/api/**").authenticated()
 				.anyRequest().permitAll()
 			.and().logout()

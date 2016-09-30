@@ -1,4 +1,4 @@
-package weeklygrocery;
+package weeklygrocery.util;
 
 import java.util.Arrays;
 import java.util.Optional;
