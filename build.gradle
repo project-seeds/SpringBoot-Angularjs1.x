@@ -1,12 +1,19 @@
 buildscript {
 	ext { springBootVersion = '1.4.1.RELEASE' }
-	repositories { mavenCentral() }
-	dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") }
+	repositories { 
+		mavenCentral() 
+		maven { url "https://plugins.gradle.org/m2/" }
+	}
+	dependencies {
+		 classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		 classpath("com.moowork.gradle:gradle-node-plugin:0.13")
+	}
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
+apply plugin: 'com.moowork.node'
 
 jar {
 	baseName = 'weekly-grocery-api'
@@ -29,3 +36,11 @@ dependencies {
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+task my_npm_install(type: NpmTask) {
+	description = "Installs dependencies from package.json"
+	workingDir = file("${project.projectDir}/src/main/resources/static")
+	args = ['install']
+}
+
+build.dependsOn(my_npm_install)
