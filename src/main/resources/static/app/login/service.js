@@ -10,7 +10,7 @@ angular.module('myApp')
             }
             return $http({
                 method: 'GET',
-                url: '/api/auth/login',
+                url: '/api/users/login',
                 headers: credentials ? {
                     'Authorization': auth
                 } : {}
