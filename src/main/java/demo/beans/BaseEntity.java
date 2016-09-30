@@ -1,4 +1,4 @@
-package weeklygrocery.beans;
+package demo.beans;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

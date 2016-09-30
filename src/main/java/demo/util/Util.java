@@ -1,4 +1,4 @@
-package weeklygrocery.util;
+package demo.util;
 
 import java.util.Arrays;
 import java.util.Optional;
@@ -8,7 +8,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import lombok.extern.slf4j.Slf4j;
-import weeklygrocery.beans.User;
+import demo.beans.User;
 
 @Slf4j
 public class Util {

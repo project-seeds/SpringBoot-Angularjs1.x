@@ -1,10 +1,10 @@
-package weeklygrocery.repositories;
+package demo.repositories;
 
 import java.util.Optional;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import weeklygrocery.beans.User;
+import demo.beans.User;
 
 public interface UserRepo extends PagingAndSortingRepository<User, Long> {
 

@@ -1,4 +1,4 @@
-package weeklygrocery.controllers;
+package demo.controllers;
 
 import javax.validation.Valid;
 
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import weeklygrocery.beans.User;
-import weeklygrocery.beans.User.Role;
-import weeklygrocery.repositories.UserRepo;
-import weeklygrocery.util.Response;
-import weeklygrocery.util.Util;
+import demo.beans.User;
+import demo.beans.User.Role;
+import demo.repositories.UserRepo;
+import demo.util.Response;
+import demo.util.Util;
 
 @RestController
 @RequestMapping("/api/users")

@@ -1,4 +1,4 @@
-package weeklygrocery.config;
+package demo.config;
 
 import java.util.stream.Stream;
 
@@ -21,7 +21,7 @@ import org.springframework.security.data.repository.query.SecurityEvaluationCont
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
 
-import weeklygrocery.repositories.UserRepo;
+import demo.repositories.UserRepo;
 
 
 @Configuration
@@ -31,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private UserRepo userRepo;
-	
+
 	@Autowired
 	private Environment environment;
 
@@ -46,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.and().logout()
 				.logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler())
 				.logoutUrl("/api/auth/logout");
-		
+
 		if (Stream.of(environment.getActiveProfiles()).noneMatch(p -> p.contains("prod"))) {
 			http.csrf().disable().headers().frameOptions().disable();
 		}
@@ -58,7 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				username -> userRepo.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("")))
 				.passwordEncoder(passwordEncoder());
 	}
-	
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
