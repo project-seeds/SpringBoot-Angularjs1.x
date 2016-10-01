@@ -46,7 +46,6 @@ function authenticateOnServer(LoginService, $rootScope, $location) {
         function(user) {
             if (user) {
                 $rootScope.user = user;
-                $location.path('/')
                 console.log('authenticated: ', user);
             } else {
                 $rootScope.user = null
